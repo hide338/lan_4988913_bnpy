@@ -1,0 +1,170 @@
+@use '../../foundaton/variables' as *;
+@use '../../foundaton/mixins' as *;
+
+/*吹き出し*/
+.c-balloon {
+
+  &__item {
+    margin-top: 50px;
+    @include mq(sp) {
+      margin-top: 45px;
+    }
+    &:first-of-type {
+      margin-top: 0;
+    }
+    &:nth-of-type(2n) {
+      .c-balloon__flex {
+        @include mq(sp) {
+          flex-direction: column-reverse;
+        }
+      }
+    }
+  }
+
+  &__flex {
+    display:flex;
+    justify-content: flex-start;
+    align-items: flex-start; /*縦位置を上揃え*/
+  /*   align-items: center; */ /*縦位置を真ん中揃え*/
+
+  @include mq(sp) {
+    flex-direction: column;
+    &:nth-of-type(2n) {
+      flex-direction: column-reverse;
+    }
+  }
+
+    &--icon-left {
+      .c-balloon__icon {
+        margin-right: 40px;
+      }
+      .c-balloon__says {
+        border: 1px solid $accent-color;
+        &::before {
+          left: -22px;
+          width: 0;
+          height: 0;
+          border-right: 22px solid $accent-color;
+          @include mq(sp) {
+            rotate: 90deg;
+            top: -23px;
+            left: 25px;
+          }
+        }
+        &::after {
+          left: -20px;
+          width: 0;
+          height: 0;
+          border-right: 22px solid #ffffff;
+          @include mq(sp) {
+            rotate: 90deg;
+            top: -21px;
+            left: 25px;
+          }
+        }
+      }
+    }
+
+    &--icon-right {
+      justify-content: flex-end;
+      .c-balloon__icon {
+        margin-left: 25px;
+        order:2 !important;
+        @include mq(sp) {
+          margin-left: auto;
+        }
+      }
+      .c-balloon__says {
+        border: 1px solid $accent-color-light;
+        &::before {
+          right: -22px;
+          width: 0;
+          height: 0;
+          border-left: 22px solid $accent-color-light;
+          @include mq(sp) {
+            rotate: -90deg;
+            top: -23px;
+            right: 25px;
+          }
+        }
+        &::after {
+          right: -20px;
+          width: 0;
+          height: 0;
+          border-left: 22px solid #ffffff;
+          @include mq(sp) {
+            rotate: -90deg;
+            top: -21px;
+            right: 25px;
+          }
+        }
+      }
+    }
+  }
+
+  &__icon {
+    transform: translateY(-20px);
+    img {
+      width: 96px; /*任意のサイズ*/
+      height: auto;
+      @include mq(sp) {
+        width: 69.36px;
+      }
+    }
+  }
+
+  &__says {
+    width:100%; /*最大幅は任意*/
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 30px;
+    border-radius: 10px;
+    background: #fff;/*色は任意*/
+    box-sizing:border-box;
+    margin:0 !important;
+    line-height:1.5;
+    opacity: 0;
+    visibility: hidden;
+  /*   align-items: center; */
+
+    &.is-play {
+      animation: popup 0.5s ease;
+      opacity: 1;
+      visibility: visible;
+    }
+
+  @include mq(sp) {
+    padding: 13px;
+  }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+
+      border-left: 0;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 0;
+    }
+
+    p {
+      margin:8px 0 0 !important;
+      &:first-child {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}

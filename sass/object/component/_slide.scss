@@ -1,0 +1,87 @@
+@use '../../foundaton/variables' as *;
+@use '../../foundaton/mixins' as *;
+
+.c-slide {
+  margin-top: 55px;
+  width: 100%;
+  border: 1px solid $accent-color-light;
+  @include mq(sp) {
+    margin-top: 20px;
+  }
+
+  &__title {
+    overflow: hidden;
+    background-color: $accent-color;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    &::before {
+      content: '';
+      display: block;
+      width: 37px;
+      height: 37px;;
+      background-color: $accent-color-light;
+      border-radius: 999px;
+      transform: translateX(-50%);
+    }
+
+    @include mq(sp) {
+      display: flex;
+      align-items: center;
+      font-size: 0.5rem;
+      padding-top: 5px;
+      padding-bottom: 5px;
+
+      &::before {
+        width: 13px;
+        height: 13px;
+      }
+    }
+  }
+
+  &__inner {
+    padding: 32px 10%;
+    position: relative;
+
+    @include mq(sp) {
+      padding: 10px 8.8%;
+    }
+
+    &--yesno {
+      padding: 32px 4%;
+      @include mq(sp) {
+        padding: 10px 4%;
+      }
+    }
+  }
+
+  &__graph {
+    width: 75.6%;
+  }
+
+  &__search-icon {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    @include mq(sp) {
+      display: none;
+    }
+
+    .cls-1 {
+      fill: #634b45;
+      stroke: #fff;
+      stroke-miterlimit: 10;
+      stroke-width: 3px;
+    }
+
+    .cls-2 {
+      fill: #fff;
+      stroke-width: 0px;
+    }
+  }
+}

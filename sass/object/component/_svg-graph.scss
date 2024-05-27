@@ -1,0 +1,17 @@
+@use '../../foundaton/variables' as *;
+@use '../../foundaton/mixins' as *;
+
+.c-svg-graph {
+  // margin-inline: auto;
+  width: 100%;
+
+  &__title {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    @include mq(sp) {
+      font-size: 7px;
+    }
+  }
+}

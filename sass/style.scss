@@ -1,0 +1,29 @@
+// foundationの読み込み
+@forward './foundaton/base';
+@forward './foundaton/reset';
+
+// layoutの読み込み
+@forward './layout/header';
+@forward './layout/footer';
+@forward './layout/container';
+@forward './layout/gnav';
+@forward './layout/section';
+
+// componentの読み込み
+@forward './object/component/button';
+@forward './object/component/text';
+@forward './object/component/baloon';
+@forward './object/component/section';
+@forward './object/component/slide';
+@forward './object/component/svg-graph';
+@forward './object/component/loop';
+
+// projectの読み込み
+@forward './object/project/card';
+@forward './object/project/lp';
+@forward './object/project/animation';
+
+// utilityの読み込み
+@forward './object/utility/hover';
+@forward './object/utility/position';
+@forward './object/utility/padding';

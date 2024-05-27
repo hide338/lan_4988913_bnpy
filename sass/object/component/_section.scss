@@ -1,0 +1,151 @@
+@use '../../foundaton/variables' as *;
+@use '../../foundaton/mixins' as *;
+
+.c-section {
+  position: relative;
+
+  &__header {
+    position: relative;
+    height: 182px;
+    @include mq(sp) {
+      height: 151px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    height: 180px;
+    @include mq(sp) {
+      height: 145px;
+    }
+
+    &.is-play {
+      .c-section__title-number,
+      .c-section__title-building {
+        transform: translate(-50%, 0);
+        opacity: 1;
+        visibility: visible;
+      }
+      .c-section__title-text {
+        // width: 100%;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        @include mq(sp) {
+          width: 100vw;
+        }
+      }
+    }
+
+    &-number {
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      width: 31.6865px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s;
+      transition-delay: .5s;
+      @include mq(sp) {
+        top: 30px;
+        width: 25.3467px;
+      }
+      &--2 {
+        width: 48.626px;
+        @include mq(sp) {
+          width: 38.8975px;
+        }
+      }
+      &--3 {
+        width: 48.9639px;
+        @include mq(sp) {
+          width: 39.167px;
+        }
+      }
+    }
+
+    &-building {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      opacity: 0;
+      visibility: hidden;
+      transform: translate(-50%, 50%);
+      width: 204.8158px;
+      transition: all 0.5s;
+      transition-delay: .5s;
+      @include mq(sp) {
+        width: 163.8526px;
+      }
+    }
+
+    &-text {
+      position: absolute;
+      bottom: 0;
+      background-color: $main-color;
+      color: #fff;
+      @include title-font(2rem);
+      height: 76px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 999px;
+      width: 100%;
+      transform: translateX(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s;
+      @include mq(sp) {
+        @include title-font(1.7rem);
+        height: 60px;
+        @include expand();
+        border-radius: 0;
+        // width: 0%;
+        font-size: 1.7rem;
+      }
+    }
+  }
+
+
+  &__building {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1000px;
+    margin-inline: auto;
+  }
+
+  &__body {
+    line-height: 2;
+  }
+
+  &__body-inner {
+    padding-inline: 40px;
+    @include mq(sp) {
+      padding-inline: 0;
+    }
+  }
+
+  &__text {
+    margin-top: 35px;
+  }
+
+  &__body-title {
+    margin-top: 35px;
+    @include title-font(1.5rem, $main-color);
+    display: flex;
+    align-items: center;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 5px;
+      height: 30px;
+      background-color: #BBA48A;
+      margin-right: 7px;
+      border-radius: 999px;
+    }
+  }
+}

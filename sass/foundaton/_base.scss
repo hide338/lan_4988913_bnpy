@@ -1,0 +1,37 @@
+@use '../foundaton/variables' as *;
+@use '../foundaton/mixins' as *;
+
+/**********************************************
+  サイトのベーススタイル(タグ指定)
+  JavaScript使用のスタイル
+**********************************************/
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: $header-height;
+  @include mq(sp) {
+    scroll-padding-top: $sp-header-height;
+  }
+}
+
+body {
+  color: $text-color;
+  font-family: $font-family;
+  // letter-spacing: $letter-spacing;
+  overflow-x: hidden;
+  line-height: 2;
+  // background-color: $base-color;
+  // line-height: $line-height;
+  // font-feature-settings: "palt";
+}
+
+main {
+  margin-top: $header-height;
+  @include mq(sp) {
+    margin-top: $sp-header-height;
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  appearance: revert;
+}

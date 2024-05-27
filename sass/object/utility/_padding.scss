@@ -1,0 +1,17 @@
+@use '../../foundaton/variables' as *;
+@use '../../foundaton/mixins' as *;
+
+/* ==================================================================== 
+  Margin
+  =================================================================== */
+.u-pt0 {
+  padding-top: 0;
+}
+
+.u-px40 {
+  padding-inline: 40px;
+}
+
+.u-pl15 {
+  padding-inline-start: 15px;
+}

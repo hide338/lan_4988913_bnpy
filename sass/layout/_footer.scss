@@ -1,0 +1,37 @@
+@use '../foundaton/variables' as *;
+@use '../foundaton/mixins' as *;
+
+.l-footer {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  
+  &__title {
+    font-size: 1.6875rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    @include mq(md) {
+      font-size: 1rem;
+      flex-direction: column;
+    }
+  }
+
+  &__copyright {
+    margin-top: 35px;
+    font-size: 0.6875rem;
+  }
+
+  /* ==================================================================== 
+  Project TopBtn
+  =================================================================== */
+  .p-top-btn {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    @include mq(sp) {
+      width: 48px;
+    }
+  }
+}

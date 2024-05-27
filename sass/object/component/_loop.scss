@@ -1,0 +1,41 @@
+@use '../../foundaton/variables' as *;
+@use '../../foundaton/mixins' as *;
+
+.c-loop {
+  position: absolute;
+  bottom: -28px;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.c-loop__wrapper {
+  display: flex;
+  width: calc(1567.5456px * 2);
+  height: 150px;
+  @include mq(sp) {
+    height: 137px;
+  }
+}
+
+.c-loop__list {
+  display: flex;
+  justify-content: center;
+  animation: loop 100s linear infinite;
+}
+
+.c-loop__item {
+  width: 1567.5456px;
+  img {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@keyframes loop {
+  from {
+    translate: 0;
+  }
+  to {
+    translate: -100% 0;
+  }
+}

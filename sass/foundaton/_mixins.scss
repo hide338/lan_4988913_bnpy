@@ -1,0 +1,108 @@
+@use './variables' as *;
+
+/* ======================================================================================
+  Break Points
+====================================================================================== */
+@mixin mq($breakpoint) {
+  @media screen and (max-width: #{map-get($breakpoints, $breakpoint)}){
+    @content;
+  }
+}
+
+/* ======================================================================================
+  container
+====================================================================================== */
+@mixin container($container-width: $container-width, $pc-padding: 30px, $sp-padding: 20px) {
+  max-width: $container-width;
+  margin-inline: auto;
+  padding-inline: $pc-padding;
+  @include mq(sp) {
+    padding-inline: $sp-padding;
+  }
+}
+
+@mixin center-content() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ======================================================================================
+  画面幅に合わせて拡大
+====================================================================================== */
+@mixin expand() {
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+}
+
+/* ======================================================================================
+  タイトルフォント
+====================================================================================== */
+@mixin title-font($font-size: 2rem, $color: #fff) {
+  font-family: $title-font-family;
+  font-weight: bold;
+  font-size: $font-size;
+  letter-spacing: 2.02%;
+  color: $color;
+  line-height: 1em;
+}
+
+/* ======================================================================================
+  ボタン
+====================================================================================== */
+@mixin nav-button($width: 500px, $padding: 10px, $border-radius: 999px, $bg-color: #fff, $color: $main-color, $border-color: $main-color, $duration-time: 0.3s) {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  @if $border-color == 0 {
+    border: none;
+  } @else {
+    border: 1px solid $main-color;
+  }
+  border-radius: $border-radius;
+  padding: $padding;
+  width: $width;
+  transition: all $duration-time;
+
+
+  &__circle {
+    @include center-content();
+    background-color: $main-color;
+    color: white;
+    width: 38.7001px;
+    height: 38.7001px;
+    border-radius: 50%;
+    font-size: 30px;
+    margin-right: 10px;
+    line-height: 1;
+  }
+
+  
+  &__text {
+    flex-grow: 1;
+    color: #634b45;
+    font-size: 20px;
+    text-align-last: left;
+  }
+  
+  &__arrow {
+    color: $main-color;
+    font-size: 20px;
+    transition: all $duration-time;
+  }
+
+  &:hover {
+    background-color: $main-color-light;
+    .c-btn__arrow {
+      rotate: 90deg;
+    }
+  }
+}
+
+/* ======================================================================================
+  アニメーション
+====================================================================================== */
+@mixin grow() {
+
+}

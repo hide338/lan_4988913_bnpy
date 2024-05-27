@@ -1,0 +1,10 @@
+@use '../foundaton/variables' as *;
+@use '../foundaton/mixins' as *;
+
+/* ==================================================================== 
+  Section
+  =================================================================== */
+.l-section {
+  background-color: $base-color;
+  padding-top: 60px;
+}

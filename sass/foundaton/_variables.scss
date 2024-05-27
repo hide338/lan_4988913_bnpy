@@ -1,0 +1,58 @@
+/**********************************************
+  変数
+**********************************************/
+// Breakpoint
+$breakpoints: (
+  'sp': 425px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1440px,
+) !default;
+
+//サイトで使用するカラー
+$base-color: #F1EDE7;
+$main-color: #634B45;
+$main-color-light: #E4DBD0;
+$secondary-color: #F2F2F2;
+$accent-color: #4F6858;
+$accent-color-light: #94C394;
+$text-color: #333;
+$border-color: #333;
+
+// 透過度
+$opacity: 0.7;
+
+//画像格納ディレクトリ
+$imgDir: '../img/';
+
+//PCレイアウト時の最大横幅
+$container-width: 1040px;
+
+// ヘッダーの高さ
+$header-height: 90px;
+$sp-header-height: 60px;
+
+// フォントファミリー
+$font-family: "Noto Sans JP", sans-serif;
+$title-font-family: "Zen Maru Gothic", sans-serif;
+
+// フォントサイズ
+$sp-font-size: 0.875rem;
+
+// 文字間
+$letter-spacing: 0.05em;
+
+// 行間
+$line-height: 1.6;
+
+// アクション時間
+$duration-time: .3s;
+
+// アクション待機時間
+$delay-time: .3s;
+
+// DisplayGridのアイテム間隔（gap-size）
+$gap-size: 16;
+
+//要素の丸め
+$border-radius: 0.25rem;

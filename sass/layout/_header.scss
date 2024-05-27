@@ -1,0 +1,42 @@
+@use '../foundaton/variables' as *;
+@use '../foundaton/mixins' as *;
+
+.l-header {
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  &.is-active {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &__inner {
+    height: $header-height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mq(sp) {
+      height: $sp-header-height;
+    }
+  }
+
+  &__item-name {
+    width: 161.1636px;
+    @include mq(sp) {
+      width: 40%;
+    }
+  }
+
+  &__logo {
+    width: 65.7217px;
+    @include mq(sp) {
+      width: 16.4%;
+      transform: translateX(-60px);
+    }
+  }
+
+}

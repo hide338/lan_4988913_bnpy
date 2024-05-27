@@ -1,0 +1,118 @@
+@use '../foundaton/variables' as *;
+@use '../foundaton/mixins' as *;
+
+.l-spGnav {
+  display: none;
+  @include mq(sp) {
+    display: block;
+  }
+  
+  &__btn {
+    cursor: pointer;
+    position: fixed;
+    height: 60px;
+    width: 60px;
+    top: 0;
+    right: 0;
+    background-color: $accent-color;
+    z-index: 20;
+  }
+
+  &__hamburger {
+    position: relative;
+    height: 40%;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    span {
+      height: 1px;
+      width: 33px;
+      border-radius: 999px;
+      background: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all $duration-time;
+
+      &:first-child {
+        top: 0;
+      }
+
+      &:last-child {
+        top: 100%;
+      }
+    }
+
+    &.active span {
+
+      &:nth-of-type(1) {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &:nth-of-type(2) {
+        opacity: 0;
+      }
+
+      &:nth-of-type(3) {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    opacity: 0;
+    height: 100vh;
+    text-align: center;
+    background-color: #fff;
+    z-index: 10;
+    transition: all $duration-time;
+
+    &.active {
+      left: 0;
+      opacity: 1;
+
+      .l-spGnav__item {
+        opacity: 1;
+        transform: translateY(0);
+        opacity: 1;
+        // transition: all 0s;
+      }
+    }
+  }
+
+  &__list {
+    position: absolute;
+    width: 100%;
+    top: 75px;
+  }
+  
+  &__item {
+    margin-bottom: 5px;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all $duration-time;
+    &:nth-of-type(1) {
+      transition-delay: .2s;
+    }
+    &:nth-of-type(2) {
+      transition-delay: .3s;
+    }
+    &:nth-of-type(3) {
+      transition-delay: .4s;
+    }
+  }
+  
+  &__link {
+    text-decoration: none;
+    color: #fff;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
